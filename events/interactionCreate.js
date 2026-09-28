@@ -16,6 +16,14 @@ module.exports = {
             }
             return;
         }
-        if (interaction.isButton()) await buttonRouter(interaction);
+
+        if (interaction.isButton()) {
+            await buttonRouter(interaction);
+            return;
+        }
+
+        if (interaction.isStringSelectMenu()) {
+            await buttonRouter(interaction);
+        }
     }
 };
